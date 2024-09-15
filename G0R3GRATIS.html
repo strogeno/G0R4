@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G0R4</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Creepster', cursive;
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+        .center-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .center-buttons button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+        }
+        .hidden-buttons {
+            display: none;
+        }
+        .button-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .button-container button {
+            position: absolute;
+        }
+        .button1 { font-size: 1.2em; }
+        .button2 { font-size: 1.4em; }
+        .button3 { font-size: 1.6em; }
+        .button4 { font-size: 1.8em; }
+        .button5 { font-size: 2em; }
+        .button6 { font-size: 1.3em; }
+        .button7 { font-size: 1.5em; }
+        .button8 { font-size: 1.7em; }
+        .button9 { font-size: 1.9em; }
+        .button10 { font-size: 2.1em; }
+        .hidden-button {
+            background-color: black;
+            color: black;
+            border: none;
+        }
+        #countdown {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showButtons() {
+            document.getElementById('extra-buttons').style.display = 'block';
+        }
+
+        function showImageAndExit() {
+            alert('PUDRETE');
+            window.close(); // Cierra la ventana en lugar de redirigir
+        }
+
+        function randomizeButtons() {
+            const buttons = document.querySelectorAll('.button-container button');
+            const positions = [];
+
+            buttons.forEach(button => {
+                let x, y, overlap;
+                do {
+                    overlap = false;
+                    x = Math.random() * (window.innerWidth - button.offsetWidth);
+                    y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+                    for (const pos of positions) {
+                        const distance = Math.sqrt(Math.pow(pos.x - x, 2) + Math.pow(pos.y - y, 2));
+                        if (distance < button.offsetWidth) {
+                            overlap = true;
+                            break;
+                        }
+                    }
+                } while (overlap);
+
+                positions.push({ x, y });
+                button.style.left = `${x}px`;
+                button.style.top = `${y}px`;
+            });
+        }
+
+        function startCountdown() {
+            const countdownDate = new Date('November 1, 2024 00:00:00').getTime();
+            const countdownElement = document.getElementById('countdown');
+
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `Faltan ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos`;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = '¡El tiempo ha llegado!';
+                }
+            }, 1000);
+        }
+
+        function showCountdown() {
+            document.getElementById('countdown').style.display = 'block';
+            startCountdown();
+        }
+
+        window.onload = randomizeButtons;
+    </script>
+</head>
+<body>
+    <h1>G0R4 D3L7X3</h1>
+    <p>¿Quieres ver sangre?</p>
+    <div class="center-buttons">
+        <button onclick="window.location.href='https://open.spotify.com/album/7lOdteJNX52QJCMCuGtrtA?si=KvaN7mJbQqCGUdYzkMyGxA'">Sí</button> <!-- Cambia esta URL a la página de redirección -->
+        <button onclick="showButtons()">666</button>
+        <button onclick="showImageAndExit()">No</button>
+    </div>
+
+ <div id="extra-buttons" class="hidden-buttons button-container">
+        <button class="button1" onclick="window.location.href='https://www.google.com/search?client=ms-android-motorola-rvo3&sca_esv=5f79ce677043d4b2&sxsrf=ADLYWIL2NgtySSkUiSvrZHZ7KFQoWrK-vA:1726434367899&q=costra&source=lnms&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgWizR0-0aFOH11Sb5tlNhd7L9QFlHbGCCw2CV3tLpo-Fa7jL9jFUN-fz1eiUy5q0wDL67nVy3eYfb5Y7wz7zOdjY0jvBX8g5kWcxtW2Jg3lgdXnIpHhrRZWyLZ15JJ5ohdYyWVmnXzv2t1Nve8PgW7cVh_k_lTcXqfjvoy8bhuxoiVS6-lMn5K7_LvJ4-nvOe0vQkeQ&sa=X&ved=2ahUKEwjU5-eZ7cWIAxVcSjABHc7pFF8Q0pQJegQIEhAB&biw=432&bih=814&dpr=2.5'">costra</button>
+        <button class="button2" onclick="window.location.href='https://www.google.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2024%2F04%2F29%2F17144049730246.jpg&tbnid=x1aEvOW12jJ9bM&vet=1&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Fcomo%2F2024%2F04%2F30%2F662f9dc7e85ece2b058b4598.html&docid=h_GgMQYog12jtM&w=1200&h=2037&source=sh%2Fx%2Fim%2Fm1%2F2&kgs=de0343c70f34bbc3&shem=abme%2Ctrie'">Santo</button>
+        <button class="button3" onclick="window.location.href='https://images.app.goo.gl/hmuz3fmgsT3hnv9H9'">entrañas</button>
+        <button class="button4" onclick="window.location.href='https://images.app.goo.gl/xRyYkKajsPuvoWZe9'">intruso</button>
+        <button class="button5" onclick="window.location.href='https://images.app.goo.gl/cSeYC4WB2MpozCGfA'">candy</button>
+        <button class="button6" onclick="window.location.href='Cicatrices https://g.co/kgs/aWFYcNH'">G0R3</button>
+        <button class="button7" onclick="window.location.href='https://www.google.com/search?client=ms-android-motorola-rvo3&sca_esv=5f79ce677043d4b2&sxsrf=ADLYWIJ00KhhsvtFV2RZda_0EkG4W04dPA:1726434664765&q=homogenico&source=lnms&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgWizR0-0aFOH11Sb5tlNhdwiPJWZFf-MdNGF5cE7ER6mV0KqtwDrg4ZaNCnH8qTtE0st1SVkXMUl30GYU73V2ak4VlpS6kOkG1p9_BA1rCoLr_1LXhLi6IEjajLlpjfbMqRmwyAcpYpiI0ZrGQuCHxLvN_6MS2h7q3p_tWaCy7joTLcFKESmSkLtej97gi7A-OctSsg&sa=X&ved=2ahUKEwjlia-n7sWIAxUISjABHY6RDq0Q0pQJegQIERAB&biw=432&bih=814&dpr=2.5'">Homogenico</button>
+        <button class="button8" onclick="window.location.href='https://youtu.be/GGqXOFdm_to?si=z3Yyj0BYD9iUmjUo'">x</button>
+        <button class="button9" onclick="window.location.href='https://youtu.be/ZhIsAZO5gl0?si=lLYJssmtmvBdaYA1'">xx</button>
+        <button class="button10" onclick="window.location.href='https://www.google.com/search?client=ms-android-motorola-rvo3&sca_esv=5f79ce677043d4b2&sxsrf=ADLYWIKmZ1ZOHvZ2f1-qUdSVs01lFDSNWw:1726434024968&q=str0gen000&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgWizR0-0aFOH11Sb5tlNhdwiPJWZFf-MdNGF5cE7ER6mV0KqtwDrg4ZaNCnH8qTtEp1JpfzCEShonBCB-mLhTlwBsSQfkdKoJiDrrNNhd57LWClV1TFWQ9ZByTF-0Crc5wyrljwid16PcPq2B6N0eyw0AGkV4cKC5Frk1dREHQfTc-8gTHw7tRfNv1J7iuNXjmEOCPQ&sa=X&ved=2ahUKEwim8KT268WIAxWaQjABHQmGGUoQtKgLegQIDBAB&biw=432&bih=814&dpr=2.5'">xxx</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/lamanoconpelos1/status/1824393943989227888?t=EcIruGGjYqLGjPJlJFU2Lw&s=19'">Botón oculto 1</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/RestrictedVids/status/1824994561556418834?t=6FHRebcg9B2vr9tr5jMN5Q&s=19''">Botón oculto 2</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/SoyAlerta/status/1834000239197344156?t=fmITFZ9f2uHh0CB-wQHCZw&s=19'">Botón oculto 3</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/h0m3r02/status/1825131130212749608?t=MHY61xglYDAVzGYhAUOzwQ&s=19'">Botón oculto 4</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/buffys/status/1828086373817237737?t=S9hr23Aq1-RpQAkzb18hag&s=19'">Botón oculto 5</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/lamanoconpelos1/status/1824207168108892562?t=B7TFBTUMv8J94rWErnur8w&s=19'">Botón oculto 6</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/SrLiberal/status/1817614988426522859?t=ayqDSldBxUvvc9YbxIh3Mg&s=19'">Botón oculto 7</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/Bio_comunidad/status/1813261787225071672?t=0nR7VrgUudLAmtsqznc-Jw&s=19'">Botón oculto 8</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/lamanoconpelos1/status/1835106741467709628?t=HhlTj7i8l0COP1Dby2IcyQ&s=19'">Botón oculto 9</button>
+        <button class="hidden-button" onclick="window.location.href='https://x.com/lamanoconpelos1/status/1835251569362956449?t=zLKj79-R8vGUSQ8r1Emmiw&s=19'">Botón oculto 10</button>
+    </div>
+
+    <button onclick="showCountdown()">¿En cuánto tiempo?</button>
+    <div id="countdown" style="display: none;"></div>
+</body>
+</html>
